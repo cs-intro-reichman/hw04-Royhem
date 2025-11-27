@@ -41,7 +41,7 @@ public class Primes {
             
             
 
-            int per=(count/num)*100;
+            int per=(int)(((double)count/(double)num)*100);
 
         
 
