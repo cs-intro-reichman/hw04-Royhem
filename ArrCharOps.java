@@ -35,9 +35,9 @@ public class ArrCharOps {
 
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
-    public static char charAt(char[] arr, int index) {
-        // Replace the following statement with your code
-        return 0;
+    public static char charAt(char[] arr, int index) 
+    {
+        return arr[index];   
     }
 
     /** If the two arrays have the same value in every index, 
@@ -67,15 +67,32 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-        // Replace the following statement with your code
+        for( int i=arr.length; i>=0; i--)
+        {
+            if(arr[i]==ch)
+                return i;
+        }
         return -1;
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        // Replace the following statement with your code
-        return null;
+
+        char[] newArr = new char[arr1.length+arr2.length];
+        int i=0;
+        while (i<arr1.length) 
+        {
+            newArr[i]=arr1[i];
+            i++;
+        }
+
+        for (int j=0;j<arr2.length;j++)
+        {
+            newArr[i]=arr2[j];
+        }
+
+        return newArr;
     }
 
     /** Returns a new array that can be described as a sub-array of this array.
@@ -126,7 +143,27 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
-        return 0;
+
+        int min= Math.min(str1.length(),str2.length());
+            
+        for (int j=0;j<min;j++)
+        {
+                if(str1.charAt(j)<str2.charAt(j))
+                {
+                    return -1;
+                }
+                else if(str1.charAt(j)>str2.charAt(j))
+                {
+                    return 1;
+                }
+            
+        }
+
+        if (str1.length()<str2.length()) {
+            return -1;
+        }else if (str1.length()>str2.length())
+        return 1;
+
+        return 0; 
     }
 }
