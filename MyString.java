@@ -32,41 +32,32 @@ public class MyString {
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
 
-        int n1 = str1.length();
-        int n2 = str2.length();
 
-        // מחרוזת ריקה תמיד מוכלת (בבדיקת contain)
-        if (n2 == 0) {
+        if (str2.length() == 0) {
             return true;
         }
-        // אם str2 ארוכה יותר מ-str1, אין סיכוי להכלה
-        if (n2 > n1) {
+        if (str2.length() > str1.length()) {
             return false;
         }
 
-        // 2. לולאה חיצונית: סורקת את כל המיקומים האפשריים להתחלה (i)
-        // המיקום האחרון לבדיקה הוא n1 - n2
-        for (int i = 0; i <= n1 - n2; i++) {
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
             
-            boolean match = true;
+            boolean s = true;
             
-            // 3. לולאה פנימית: בודקת התאמה תו-אחר-תו של str2
-            for (int j = 0; j < n2; j++) {
+            for (int j = 0; j < str2.length(); j++) {
                 
-                // משווים את התו ה-j ב-str2 לתו ב-str1 החל ממיקום i
                 if (str1.charAt(i + j) != str2.charAt(j)) {
-                    match = false;
-                    break; // נמצאה אי-התאמה, יוצאים מהבדיקה הפנימית ומתחילים מחדש ב-i+1
+                    s = false;
+                    break; 
                 }
             }
             
-            // 4. אם הלולאה הפנימית הסתיימה בהצלחה (match נשאר true)
-            if (match) {
-                return true; // נמצאה התאמה, מחזירים true ויוצאים
+            if (s) {
+                return true; 
             }
         }
 
-        // 5. אם אף התחלה לא הובילה להתאמה
+    
         return false;
     }
 }
