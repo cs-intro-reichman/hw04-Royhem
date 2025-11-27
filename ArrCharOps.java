@@ -84,13 +84,19 @@ public class ArrCharOps {
     /** Returns the index within the given arr of the last occurrence of the given character.
      *  If no such character is found, returns -1.
      */
-    public static int lastIndexOf(char[] arr, char ch) {
-        for( int i=arr.length; i>=0; i--)
-        {
-            if(arr[i]==ch)
-                return i;
-        }
-        return -1;
+    public static int lastIndexOf(char[] arr, char ch) 
+    
+    {
+        for (int i = arr.length - 1; i >= 0; i--) 
+            { 
+                 if (arr[i] == ch)
+                 {
+                    return i;
+                }
+                    
+            }
+
+    return -1;
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
