@@ -103,20 +103,21 @@ public class ArrCharOps {
     */
     public static char[] concat(char[] arr1, char[] arr2) {
 
-        char[] newArr = new char[arr1.length+arr2.length];
+       
         int i=0;
+        char[] s = new char[arr1.length+arr2.length];
         while (i<arr1.length) 
         {
-            newArr[i]=arr1[i];
+            s[i]=arr1[i];
             i++;
         }
 
         for (int j=0;j<arr2.length;j++)
         {
-            newArr[i]=arr2[j];
+            s[i+j]=arr2[j];
         }
 
-        return newArr;
+        return s;
     }
 
     /** Returns a new array that can be described as a sub-array of this array.
@@ -184,6 +185,10 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
 
+
+        if (str2 == null || str1 == null || str1.isEmpty() || str2.isEmpty()) {
+        return -1;
+    }
         int min= Math.min(str1.length(),str2.length());
             
         for (int j=0;j<min;j++)
