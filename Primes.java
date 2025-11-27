@@ -5,7 +5,7 @@ public class Primes {
         int s=2;
         int count=0;
         int sqrtN =(int) Math.sqrt(s);
-        
+        System.out.println("Prime numbers up to " + num + ":");
 
        
         while (s<=num) {
@@ -41,7 +41,7 @@ public class Primes {
             
             
 
-            double per=((double)count/(double)num)*100;
+            int per=(count/num)*100;
 
         
 
